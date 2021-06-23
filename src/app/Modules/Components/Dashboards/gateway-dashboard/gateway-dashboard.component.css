@@ -1,0 +1,198 @@
+*{
+	text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+body {
+	background: #eeeeee;
+	font-family: 'Varela Round', sans-serif;
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+}
+.operationalHeading {
+    padding: 0 20PX 0 20px;
+    margin: 0;
+    height: auto;
+    border-bottom: solid 1px rgb(148, 187, 226);
+	color: rgb(43,95,143);
+	justify-content: space-between;
+}
+.operationalHeading span {
+	margin: 8px 18px;
+    display: inline-block;
+	color: #000;
+	font-size: 12px;
+}
+.cardDate .mat-focus-indicator{
+    position :relative;
+    top : 10px;
+}
+ .operationalHeading h1{
+    margin: 0;
+    font-size: 1.5rem;
+    color: rgb(43,95,143);
+    display:inline-block;
+	line-height: 2.8em;
+	font-size: 1.5rem;
+}
+
+.zoneRwo{
+    padding: 15px 20px 0px 20px;
+}
+.zoneRwo h6{
+    font-size: 18px;
+}
+.zoneRwo p{
+    font-size: 14px;
+}
+.zoneRwo span{
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px 25px 0 0;
+}
+.zoneThreeRow{
+    padding: 10px 20px;
+}
+.zoneThreeRow .zoneSvgHeading{
+    position: relative;
+}
+.zoneThreeRow .zoneSvgHeading .total-installedGateway{
+    position: absolute;
+    top: 36px;
+    left: 35px;
+    font-weight: 700;
+    color : rgb(38, 78, 116);
+
+}
+.zoneThreeRow .zoneSvgHeading .workingGateway {
+    position: absolute;
+    top: 36px;
+    left: 35px;
+    font-weight: 700;
+    color : rgb(38, 78, 116);
+}
+.zoneThreeRow .zoneSvgHeading .nonWokingGateway{
+    position: absolute;
+    top: 36px;
+    left: 44px;
+    font-weight: 700;
+    color : rgb(38, 78, 116);
+}
+.zoneThreeRow .zoneSvgHeading .networkUptime{
+    position: absolute;
+    top: 36px;
+    left: 30px;
+    font-weight: 700;
+    color : rgb(38, 78, 116);
+}
+.zoneFourRow{
+    padding: 10px 20px;
+    height: auto;
+   
+}
+.zoneThreeRow em{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 90px;
+    font-size: 20px;
+    color: rgb(43,95,143);
+    font-style: normal;
+    font-weight: 600;
+}
+.zoneFourRowOne{
+    background-color: rgb(245,247,250);
+    border-radius: 5px;
+    box-shadow: 0 0 1 rgb(196, 196, 196);
+	box-shadow: 0px 1px 1px 2px #e4e5e6 ;
+    height: 400px;
+    overflow-x: scroll;
+}
+.zoneFourRowOne .GateWayStickyHeader{
+    position: sticky;
+    top: 0;
+    background-color: rgb(245,247,250);
+    border-bottom: solid 1px rgb(38, 78, 116);
+} 
+.zoneFourRow thead th{
+    border-bottom: solid 1px rgb(38, 78, 116);
+    color: rgb(43,95,143);
+    font-size: 12px;
+    padding: 8px 7px 10px 14px;
+}
+.zoneFourRow tbody td{
+    border-bottom: solid 1px rgb(43,95,143);
+    width: 155px;
+    padding: 5px 15px;
+    font-size: 12px;
+}
+.zoneFourRow tbody td:nth-child(2){
+    text-align: center;
+}
+.zoneParaRow em{
+	font: 0.4rem;
+	color: rgb(43,95,143);
+	font-style: normal;
+}
+.operationalHeading .exportBtn{
+        background-color: rgb(43,95,143);
+        padding: 8px 15px 10px 35px;
+        border: none;
+        color: #fff;
+        background-image: url(/assets/svg/_file-upload.svg);
+        background-repeat: no-repeat no-repeat;
+        background-position: 14px 9px;
+        font-size: 12px;
+        border-radius: 5px;
+}
+.cancelBtn{
+    background-color: rgb(218,218,218);
+    border : none;
+    color: #000;
+    font-size: 12px;
+    padding: 10px 30px;
+    border-radius: 8px;
+  }
+  .downloadBtn{
+    background-color: rgb(43,95,143);
+    border : none;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 10px 36px;
+    border-radius: 8px;
+  }
+.modal-title{
+    color: rgb(43,95,143);
+  }
+  .modal-content{
+    background-color: #fbfbfc;
+  }
+.tZone span{
+	font-size: 12px;
+}
+.btn-info, .btn-info:focus, .btn-info:focus-visible, .btn-info:hover, .btn-info:active {
+    box-shadow :none;
+    background-color:  rgb(43,95,143);
+    border :none;
+    outline: none;
+  }.btn-info, .btn-info:focus, .btn-info:focus-visible, .btn-info:hover, .btn-info:active {
+    box-shadow :none;
+    background-color:  rgb(43,95,143);
+    border :none;
+    outline: none;
+  }
+  .btn-secondary, .btn-secondary:focus, .btn-secondary:active, .btn-secondary:focus-visible, .btn-secondary:hover{
+    box-shadow :none !important;
+    border :none !important;
+    outline: none !important;
+    background-color: rgb(218,218,218);
+    color: rgb(43,95,143);
+  }
+  .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+    background-color: rgb(218,218,218);
+    color: #000;
+  }
+  .modal-header, .modal-footer{
+    border: none;
+  }
+  

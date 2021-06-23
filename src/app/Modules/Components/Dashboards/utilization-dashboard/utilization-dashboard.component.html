@@ -1,0 +1,319 @@
+<app-header></app-header>
+<app-left-navigation></app-left-navigation>
+
+<div fxLayout="row" fxlayoutAlign="space-between center" fxLayout.lt-sm="column" class="operationalHeading">
+    <div fxLayout="row">
+        <div fxFlex="">
+            <h1>Card Utilization</h1>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="" class="exportRow">
+            <button type="button" class="btn btn-info exportBtn" data-toggle="modal" data-target="#resetModal">Export
+            </button>
+        </div>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayout.lt-sm="column" class="utilCardRow">
+    <div fxLayout="column">
+        <div fxLayout="row">
+            <div fxFlex="">
+                <h4>Suraksha Card Status <img src="assets/svg/info.svg" alt="info" /></h4>
+            </div>
+        </div>
+      
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.lt-sm="column">
+
+</div>
+<div fxLayout="row" class="zoneRight" fxLayoutAlign="space-between center" fxLayout.lt-sm="column" >
+    <div fxLayout="column">
+        <div fxlayout="row">
+            <div fxFlex="">
+                <h4>Total Cards : <span>800</span> </h4>
+            </div>
+        </div>
+            <div fxLayout="row">
+                <div fxLayout="row" *ngIf="countDataFetched">
+                    <div fxFlex="">
+                        {{utilizationDashboardDto.badges}}
+                        {{utilizationDashboardDto.distributed}}
+                        {{utilizationDashboardDto.nonCommunicatingBadges}}
+                        {{utilizationDashboardDto.workingBadges}}
+                    </div>
+                    <div fxFlex="">
+                        <div style="height: 200px;position: relative;left: 220px; bottom: 48px;" class="row">
+                            <canvas baseChart [data]="demodoughnutChartData" [options]="chartOptions"
+                                [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                                [colors]="chartColors" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                        </div>
+                    </div>
+                </div>
+         </div>
+    </div>
+<div class="rightHeight"></div>
+    <div fxLayout="column">
+        <div fxlayout="row">
+            <div fxFlex="">
+                <h4>Total Cards : <span>1000</span> </h4>
+            </div>
+        </div>
+            <div fxLayout="row">
+                <div fxLayout="row" *ngIf="countDataFetched">
+                    <div fxFlex="">
+                        {{utilizationDashboardDto.badges}}
+                        {{utilizationDashboardDto.distributed}}
+                        {{utilizationDashboardDto.nonCommunicatingBadges}}
+                        {{utilizationDashboardDto.workingBadges}}
+                    </div>
+                    <div fxFlex="">
+                        <div style="height: 200px;" class="row">
+                            <canvas baseChart [data]="demodoughnutChartData" [options]="chartOptions"
+                                [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                                [colors]="chartColors" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                        </div>
+                    </div>
+                </div>
+         </div>
+    </div>
+</div>
+
+<div fxLayout="row" class="zoneGp">
+        <div fxFlex="">
+            <span>Card Utilization Trend</span>
+        </div>
+</div>
+    <div fxLayout="row">
+        <div fxFlex="">
+            <div id="chartdiv" style="width: 500px; height: 200px; font-size: 12px;"></div>
+        </div>
+    </div>
+
+<div>
+    <div class="row mt-5 ml-3">
+        <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="resetModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Report</h5>
+                        <button type="button" class="close closeX" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="exportForm">
+
+                            <mat-form-field appearance="fill" class="cardTotalReport">
+                                <mat-select formControlName="reportType">
+                                    <mat-option value="totalCards">Total Cards</mat-option>
+                                    <mat-option value="distributedCards">Distributed Cards</mat-option>
+                                    <mat-option value="liveCards">Live Cards </mat-option>
+                                    <mat-option value="nonCommunicationCards">Non Communication Cards</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <!-- <select class="form-control" formControlName="reportType">
+                                <option value="totalCards">Total Cards </option>
+                                <option value="distributedCards">Distributed Cards</option>
+                                <option value="liveCards">Live Cards</option>
+                                <option value="nonCommunicationCards">Non Communication Cards</option>
+                            </select> -->
+                            <!-- <br /> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary cancelBtn" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="ml-2 d-inline btn btn-info downloadBtn"
+                            (click)="export()">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="resetModalUtilization" tabindex="-1" role="dialog" aria-labelledby="resetModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Download</h5>
+                <button type="button" class="close closeX" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="exportUtilizationForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>Report Type</span>
+                            <mat-form-field appearance="fill" class="">
+                                <mat-select formControlName="reportType">
+                                    <mat-option value="TCL_DETECTED_CARD">Suraksha Card Detected(TCL)
+                                        <!-- {{city}} -->
+                                    </mat-option>
+                                    <mat-option value="INACTIVE">Suraksha Card Inactive
+                                        <!-- {{city}} -->
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-md-6">
+                            <span>Date</span>
+                            <mat-form-field appearance="fill" class="cardDate">
+                                <input matInput [matDatepicker]="picker1" formControlName="dateForExport"
+                                    id="dateForExport" placeholder="dd/mm/yyyyy">
+                                <mat-datepicker-toggle matSuffix [for]="picker1">
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker1>
+
+                                </mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>City</span>
+                            <mat-form-field appearance="fill">
+                                <mat-select formControlName="city">
+                                    <mat-option *ngFor="let city of cityNames" [value]="city">
+                                        {{city}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!-- <br /> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary cancelBtn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="ml-2 d-inline btn btn-info downloadBtn"
+                    (click)="exportUtilization()">Download</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="utilTblData">
+    <div class="stickyGateTbl">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="utilSticky">
+            <div fxFlex="" class="one">
+                <strong>Suraksha Card Utilization Trend</strong>
+            </div>
+            <div fxFlex="" class="two">
+                <button type="button" class="btn btn-info exportBtn" data-toggle="modal"
+                    data-target="#resetModalUtilization">Export
+                </button>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="stickyData stickyHeadData">
+            <div fxFlex="14" class="">Location</div>
+            <div fxFlex="" class="">Cumilative Last {{cardUtilizationResponse.totalDays}} Days</div>
+            <div fxFlex="" class="100">previous Day</div>
+            <div fxFlex="" class="">Curent Day Live</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="utilCardTblDataOne">
+            <div fxFlex="2" class="">
+            </div>
+            <div class="SurakshaCard ">
+                <div fxFlex="" class="5"><span>Cards Detected</span> <span>Cards Not on Network</span> <span> Suraksha Card Not Detected</span></div>
+            </div>
+            <div class="SurakshaCard ">
+                <div fxFlex="" class="5"><span>Cards Detected</span> <span>Cards Not on Network</span> <span> Suraksha Card Not Detected</span></div>
+
+            </div>
+            <div class="SurakshaCard ">
+                <div fxFlex="" class="5"><span>Cards Detected</span> <span>Cards Not on Network</span> <span> Suraksha Card Not Detected</span></div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="utilCardTblData "
+        *ngFor="let listItem of cardUtilizationResponse.list">
+        <div fxFlex="11" class="" *ngFor="let listItem of cardUtilizationResponse.list">
+            {{listItem.city.cityName}}</div>
+        <div fxFlex="10" class="">
+            <div>{{listItem.cumulativeXDays.cardDeteced}}</div>
+        </div>
+        <div fxFlex="10" class="">
+            {{listItem.cumulativeXDays.inActiveCards}}
+        </div>
+        <div fxFlex="12" class="">
+            {{listItem.cumulativeXDays.cardNotDetected}}
+        </div>
+
+        <div fxFlex="" class="">
+            <div fxFlex="35">
+                {{listItem.previousDay.cardDeteced}}
+            </div>
+            <div fxFlex="35">
+                {{listItem.previousDay.inActiveCards}}
+            </div>
+            <div fxFlex="20">
+                {{listItem.previousDay.cardNotDetected}}
+            </div>
+        </div>
+        <div fxFlex="" class="">
+            <div fxFlex="16">
+            </div>
+            <div fxFlex="35">
+                {{listItem.currentDay.cardDeteced}}
+            </div>
+
+            <div fxFlex="35">
+                {{listItem.currentDay.inActiveCards}}
+            </div>
+
+            <div fxFlex="10">
+                {{listItem.currentDay.cardNotDetected}}
+            </div>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="utilCardTblData totalData"
+        *ngFor="let listItem of cardUtilizationResponse.total">
+        <div fxFlex="11" class="">Total</div>
+
+        <div fxFlex="" class="">
+            <div fxFlex="45">
+                {{listItem.cumulativeXDaysTotal.cardDeteced}}
+            </div>
+            <div fxFlex="40">
+                {{listItem.cumulativeXDaysTotal.inActiveCards}}
+            </div>
+            <div fxFlex="35">
+                {{listItem.cumulativeXDaysTotal.cardNotDetected}}
+            </div>
+        </div>
+
+        <div fxFlex="" class="">
+            <div fxFlex="8">
+            </div>
+            <div fxFlex="33">
+                {{listItem.previousDayTotal.cardDeteced}}
+            </div>
+            <div fxFlex="34">
+                {{listItem.previousDayTotal.inActiveCards}}
+            </div>
+            <div fxFlex="10">
+                {{listItem.previousDayTotal.cardNotDetected}}
+            </div>
+        </div>
+        <div fxFlex="" class="">
+            <div fxFlex="19">
+            </div>
+            <div fxFlex="34">
+                {{listItem.currentDayTotal.cardDeteced}}
+            </div>
+            <div fxFlex="34">
+                {{listItem.currentDayTotal.inActiveCards}}
+            </div>
+            <div fxFlex="10">
+                {{listItem.currentDayTotal.cardNotDetected}}
+            </div>
+        </div>
+    </div>

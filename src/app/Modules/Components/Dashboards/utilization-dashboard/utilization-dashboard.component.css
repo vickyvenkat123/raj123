@@ -1,0 +1,237 @@
+.operationalHeading {
+  padding: 0 22px;
+  margin: 0;
+  height: auto;
+  border-bottom: solid 1px rgb(236, 234, 234);
+color: rgb(43,95,143);
+justify-content: space-between;
+}
+.operationalHeading span {
+margin: 25px 17px;
+  display: inline-block;
+  font-weight: 600;
+color: #000;
+font-size: 12px;
+}
+.rightHeight{
+  border-right: solid 1px #e3e3e3;
+  height: 230px;
+}
+.operationalHeading h1{
+  margin: 0;
+  font-size: 1.5rem;
+  color: rgb(43,95,143);
+  display:inline-block;
+  line-height: 2.5em;
+}
+.operationalHeading .exportRow{
+  margin-top: 15px;
+}
+.operationalHeading .empList{
+  background-color: rgb(43,95,143);
+  padding: 9px 15px;
+  /* min-width: 100%; */
+   font-size: 12px;
+  
+  border: none;
+  color: #fff;
+  float: right;
+}
+.empList{
+  background-color: rgb(43,95,143);
+  padding: 9px 15px;
+  /* min-width: 100%; */
+   font-size: 12px;
+  
+  border: none;
+  color: #fff;
+}
+.utilCardRow{
+  padding: 20px 25px;
+}
+.utilCardRow h4{
+  font-size: 18px;
+}
+.utilCardRow img{
+  padding: 0 0 0 10px;
+}
+.utilTblData{
+  padding: 0 0;
+  background-color: rgb(245,247,250);
+  border-radius: 4px;
+  /* box-shadow: 0 0 1 rgb(196, 196, 196);
+  box-shadow: 0px 0px 4px 2px #e4e5e6; */
+  margin-left: 124px;
+  margin-right: 24px;
+  height: 320px;
+  overflow: scroll;
+}
+ .utilSticky{
+  /* border-bottom: solid 1px rgb(43,95,143); */
+  padding:  10px 20px;
+}
+.stickyData{
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(43,95,143);
+  background-color: rgb(220,230,245);
+  color: rgb(43,95,143);
+  margin-top: 10px;
+}
+
+.utilCardTblData.totalData{
+  font-weight: bold;
+  color:  rgb(43,95,143);
+}
+.stickyHeadData.stickyData > div:last-child{
+  text-align: center;
+}
+.stickyHeadData.stickyData > div:nth-child(3){
+  padding-left: 12%;
+}
+.utilCardTblData{
+  border-bottom: solid 1px rgb(152,189,224);
+  padding: 10px 0px;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 18px;
+  font-weight: normal;
+}
+.utilCardTblData .SurakshaCard {
+  margin: 0 3px 0 0;
+  font-size: 11px;
+  font-weight: normal;
+  font-weight: bold;
+  color: rgb(43,95,143);
+}
+.utilCardTblDataOne{
+  background-color: rgb(220,230,245);
+  padding :0px 15px 10px 20px ;
+}
+.SurakshaCard span{
+  font-size: 12px;
+  color: rgb(43,95,143);
+}
+.clmLine{
+  border-right: solid 1px #e3e3e3;
+}
+ .utilSticky .one{
+  float: left;
+  font-size: 16px;
+  text-align: left;
+}
+.stickyGateTbl{
+  position: sticky;
+  top: 0;
+  background-color: rgb(43,95,143);
+  z-index: 10;
+  color: #fff;
+  border-radius: 6px;
+}
+.utilTblData .utilSticky .two{
+  font-size: 16px;
+  text-align: right;
+  color: rgb(43,95,143);
+}
+.utilTblData .utilTblRow{
+  border-bottom: solid 1px rgb(43,95,143);
+  border-bottom: solid 1px rgb(43,95,143);
+  line-height: 40px;
+  margin: 0 20px;
+}
+.zoneRight h4{
+  color:rgb(43,95,143);
+  font-size: 20px;
+  font-weight:bold;
+  position: relative;
+  top: 20px;
+  margin-bottom: 30px;
+}
+.zoneRight h4 span{
+  color:rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight:bold;
+}
+.utilSticky strong{
+  font-size: 18px;
+  font-weight: normal;
+}
+.utilTblData .utilTblRow > div{
+  display: inline-block;
+  width: 12%;
+}
+.utilTblData .utilTblRow > div:last-child{
+  text-align: right;
+}
+.exportBtn{
+  background-color: rgb(43,95,143);
+  padding: 8px 15px 10px 35px;
+  border: none;
+  color: #fff;
+  background-image: url(/assets/svg/_file-upload.svg);
+  background-repeat: no-repeat no-repeat;
+  background-position: 14px 9px;
+  font-size: 12px;
+}
+.cancelBtn{
+  background-color: rgb(218,218,218);
+  border : none;
+  color: #000;
+  font-size: 12px;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+.downloadBtn{
+  background-color: rgb(43,95,143);
+  border : none;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  padding: 10px 36px;
+  border-radius: 8px;
+}
+.modal-title{
+  color: rgb(43,95,143);
+}
+.modal-content{
+  background-color: rgb(247,247,247);
+}
+.btn-info, .btn-info:focus, .btn-info:focus-visible, .btn-info:hover, .btn-info:active {
+  box-shadow :none;
+  background-color:  rgb(43,95,143);
+  border :none;
+  outline: none;
+}
+.zoneRight{
+  padding: 0 44px;
+  border: solid 1px #e3e3e3;
+  border-radius: 6px;
+  width: 92%;
+  margin: 0 auto;
+}
+.zoneGp{
+  padding: 15px 44px;
+}
+.zoneP {
+  padding: 15px 20px;
+}
+.ZoneParaM {
+display: flex;
+justify-content: space-between;
+padding: 6px ​24p;
+  margin: 12px 0 0 0;
+}
+.btn-secondary, .btn-secondary:focus, .btn-secondary:active, .btn-secondary:focus-visible, .btn-secondary:hover{
+  box-shadow :none !important;
+  border :none !important;
+  outline: none !important;
+  background-color: rgb(218,218,218) !important;
+  color: #000 !important;
+}
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+  background-color: rgb(43,95,143);
+  color: #000;
+}
+.modal-header, .modal-footer{
+  border: none;
+}

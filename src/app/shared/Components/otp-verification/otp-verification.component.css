@@ -1,0 +1,113 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+  input.ng-valid{
+  color:blue;
+  }
+.signIn {
+    display: block;
+    width: 80%; 
+    margin: 0 auto;
+    padding-top: 4%;
+}
+.signIn.forGotPassword button.sendOTP{
+    background-color: rgb(43,95,143);
+    padding: 15px 30px;
+    min-width: 100%;
+    font-size: 16px;
+    margin-left: 4px;
+    border: none;
+}
+.signIn.forGotPassword .lorawanB{
+    position: relative;
+    padding-top: 23%;
+}
+.lorawan {
+    margin-right: 40px;
+}
+.signIn.forGotPassword .goBackToLogin{
+    font-size: 20px;
+    color: rgb(61,133,198);
+    border :none;
+    text-align: center;
+    cursor: pointer;
+}
+.signIn h1 {
+    font-size: 1.2em;
+    letter-spacing: 6px;
+    padding: 6px 0;
+    color: #4863A0;
+}
+.signIn h3{
+    font-size : 20px;
+    color: rgb(65,64,66);
+}
+ .signIn .imgDiv img{
+    width: 80%;
+    height: auto;
+}  
+.signIn .form-control{
+    border: solid 1px rgb(43,95,143);
+    padding: 25px 30px;
+    color: #333;
+    font-size: 12px;
+}
+.signIn .form-control:focus{
+    outline : none;
+    box-shadow: none;
+}
+.signIn a {
+    text-decoration : none;
+    color: #62a4f7;
+}
+.signIn.forGotPassword .otp-input{
+    width: 55px !important;
+    font-size: 24px;
+    height: 40px;
+}
+
+@media (max-width: 767px){
+    .signIn {
+        width: 90%;
+    }
+.signIn .signIn-btn{
+    width: 100%;
+}
+ .signIn .loginInputs{
+    padding: 5px 0;
+} 
+.signIn .imgDiv img{
+    min-height: auto;
+    width: 100%;
+}  
+.signIn.forGotPassword button.sendOTP{
+    background-color: rgb(43,95,143);
+  
+    margin-left: 8px;
+    margin-bottom: 10px;
+    border: none;
+}
+.signIn.forGotPassword .lorawanB{
+    position: relative;
+    padding-top: 10%;
+}
+.lorawan{
+    margin-right: 40px;
+}
+.signIn.forGotPassword .goBackToLogin{
+    font-size: 16px;
+    color: rgb(43,95,143);
+    border :none;
+}
+.signIn.forGotPassword .otp-input{
+    width: 59px;
+    height: 50px;
+    border-radius: 4px;
+    border: solid 1px rgb(165,193,225) !important;
+    text-align: center;
+    font-size: 32px;
+}
+}
